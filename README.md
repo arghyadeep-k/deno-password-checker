@@ -2,9 +2,15 @@
 
 [![CI](https://github.com/arghyadeep-k/deno-password-checker/actions/workflows/deno-ci.yml/badge.svg?branch=main)](https://github.com/arghyadeep-k/deno-password-checker/actions/workflows/deno-ci.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=arghyadeep-k_deno-password-checker&metric=alert_status)](https://sonarcloud.io/dashboard?id=arghyadeep-k_deno-password-checker)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=arghyadeep-k_deno-password-checker&metric=bugs)](https://sonarcloud.io/dashboard?id=arghyadeep-k_deno-password-checker)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=arghyadeep-k_deno-password-checker&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=arghyadeep-k_deno-password-checker)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=arghyadeep-k_deno-password-checker&metric=security_rating)](https://sonarcloud.io/dashboard?id=arghyadeep-k_deno-password-checker)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=arghyadeep-k_deno-password-checker&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=arghyadeep-k_deno-password-checker)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=arghyadeep-k_deno-password-checker&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=arghyadeep-k_deno-password-checker)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=arghyadeep-k_deno-password-checker&metric=ncloc)](https://sonarcloud.io/dashboard?id=arghyadeep-k_deno-password-checker)
 [![Ko-Fi](https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg)](https://ko-fi.com/arghyadeep)
 
-A Deno🦕 module to test if a password/string matches the preset criterias.
+Deno🦕 module to test if a password/string matches the preset criterias.
 
 ## Installation
 
