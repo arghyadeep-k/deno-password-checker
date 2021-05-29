@@ -15,7 +15,7 @@ Deno🦕 module to test if a password/string matches the preset criterias.
 ## Installation
 
 ```typescript
-import { checkPassword } from "https://deno.land/x/password_checker/mods.ts";
+import { checkPassword } from "https://deno.land/x/password_checker/mod.ts";
 ```
 
 ## Parameters
@@ -40,7 +40,7 @@ import { checkPassword } from "https://deno.land/x/password_checker/mods.ts";
 ## Usage
 
 ```typescript
-import { checkPassword } from "https://deno.land/x/password_checker/mods.ts";
+import { checkPassword } from "https://deno.land/x/password_checker/mod.ts";
 
 const passwordString: string = "randomPassword123!.";
 
