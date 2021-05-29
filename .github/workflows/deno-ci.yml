@@ -46,9 +46,9 @@ jobs:
       - name: Run tests
         run: deno test
               
-      - name: Code Quality Scan
-        if: matrix.os == 'ubuntu-latest'
-        uses: SonarSource/sonarcloud-github-action@v1.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      # - name: Code Quality Scan
+      #   if: matrix.os == 'ubuntu-latest'
+      #   uses: SonarSource/sonarcloud-github-action@v1.4
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
