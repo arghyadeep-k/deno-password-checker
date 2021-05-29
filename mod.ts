@@ -1,11 +1,19 @@
-export function checkPassword(
-  password: string,
+interface params {
+  password: string;
+  minLen?: number;
+  maxLen?: number;
+  containsNum?: boolean;
+  containsSpecialChar?: boolean;
+  containsAlphabet?: boolean;
+}
+export function checkPassword({
+  password,
   minLen = 0,
   maxLen = 0,
-  containsNum = false,
-  containsSpecialChar = false,
-  containsAlphabets = false,
-): boolean {
+  containsNum = true,
+  containsSpecialChar = true,
+  containsAlphabet = true,
+}: params): boolean {
   if (minLen != 0) {
     if (password.length < minLen) {
       return false;
@@ -26,7 +34,7 @@ export function checkPassword(
       return false;
     }
   }
-  if (containsAlphabets) {
+  if (containsAlphabet) {
     if (password.search(/[A-Za-z]/) == -1) {
       return false;
     }
