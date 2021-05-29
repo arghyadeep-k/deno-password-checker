@@ -1,4 +1,4 @@
-interface params {
+interface IParams {
   password: string;
   minLen?: number;
   maxLen?: number;
