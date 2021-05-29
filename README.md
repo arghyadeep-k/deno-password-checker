@@ -1,6 +1,6 @@
 # Password Checker
 
-![CI](https://github.com/arghyadeep-k/vanes/workflows/CI/badge.svg?branch=master)
+[![CI](https://github.com/arghyadeep-k/deno-password-checker/actions/workflows/deno-ci.yml/badge.svg?branch=main)](https://github.com/arghyadeep-k/deno-password-checker/actions/workflows/deno-ci.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=arghyadeep-k_deno-password-checker&metric=alert_status)](https://sonarcloud.io/dashboard?id=arghyadeep-k_deno-password-checker)
 [![Ko-Fi](https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg)](https://ko-fi.com/arghyadeep)
 

@@ -13,7 +13,7 @@ export function checkPassword({
   containsNum = true,
   containsSpecialChar = true,
   containsAlphabet = true,
-}: params): boolean {
+}: IParams): boolean {
   if (minLen != 0) {
     if (password.length < minLen) {
       return false;
