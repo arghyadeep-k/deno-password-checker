@@ -32,10 +32,10 @@ jobs:
         uses: denoland/setup-deno@4a4e59637fa62bd6c086a216c7e4c5b457ea9e79
         with:
           deno-version: ${{ matrix.deno }} # tests across multiple Deno versions
-
-      # Uncomment this step to verify the use of 'deno fmt' on each commit.
-      #- name: Verify formatting
-      #  run: deno fmt --check
+      
+      - name: Verify formatting
+        if: matrix.os == 'ubuntu-latest'
+        run: deno fmt --check
 
       - name: Run linter
         run: deno lint
@@ -45,10 +45,10 @@ jobs:
 
       - name: Run tests
         run: deno test
-        
-      # Sonar Scan only supported in Linux. Sonar scan running on Auto-Analysis in Sonar Cloud.
-      # - name: Code Quality Scan
-      #   uses: SonarSource/sonarcloud-github-action@v1.4
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+              
+      - name: Code Quality Scan
+        if: matrix.os == 'ubuntu-latest'
+        uses: SonarSource/sonarcloud-github-action@v1.4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
