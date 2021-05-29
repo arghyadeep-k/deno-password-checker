@@ -1,28 +1,30 @@
 # Password Checker
 
-A Deno module to test if a password/string matches the preset criteria.
+A Deno🦕 module to test if a password/string matches the preset criteria.
 
 ## Installation
 
-`import { checkPassword } from "https://deno.land/x/password-checker/mods.ts";`
+```typescript
+import { checkPassword } from "https://deno.land/x/password-checker/mods.ts";
+```
 
 ## Parameters
 
 ### Mandatory Parameters:
 
-- password: string
+- `password: string`
 
 ### Optional Parameters:
 
-- minLen: number - To check the password against a minimum length. Defaults to 0
+- `minLen: number` - To check the password against a minimum length. Defaults to 0
   which disables the check.
-- maxLen: number - To check the password against a maximum length. Defaults to 0
+- `maxLen: number` - To check the password against a maximum length. Defaults to 0
   which disables the check.
-- containsNum: boolean - To check if the password contains any numbers. Defaults
+- `containsNum: boolean` - To check if the password contains any numbers. Defaults
   to true and enables the check.
-- containsSpecialChar: boolean - To check if the password contains any special
+- `containsSpecialChar: boolean` - To check if the password contains any special
   characters. Defaults to true and enables the check.
-- containsAlphabet: boolean - To check if the password contains any alphabets.
+- `containsAlphabet: boolean` - To check if the password contains any alphabets.
   Defaults to true and enables the check.
 
 ## Usage
