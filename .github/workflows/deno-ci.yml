@@ -44,7 +44,7 @@ jobs:
         run: deno cache test_deps.ts
 
       - name: Run tests
-        run: deno test
+        run: deno test --allow-net
               
       # - name: Code Quality Scan
       #   if: matrix.os == 'ubuntu-latest'
