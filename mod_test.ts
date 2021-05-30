@@ -68,3 +68,30 @@ Deno.test("Test for all options", () => {
     true,
   );
 });
+
+Deno.test("Test for common password - Positive", () => {
+  assertEquals(
+    checkPassword({
+      password: "batman123.?",
+      minLen: 2,
+      maxLen: 12,
+      checkCommonPasswords: true,
+    }),
+    true,
+  );
+});
+
+Deno.test("Test for common password - Negative", () => {
+  assertEquals(
+    checkPassword({
+      password: "batman",
+      minLen: 2,
+      maxLen: 12,
+      containsNum: false,
+      containsSpecialChar: false,
+      containsAlphabet: true,
+      checkCommonPasswords: true,
+    }),
+    false,
+  );
+});

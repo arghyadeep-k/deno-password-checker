@@ -5,6 +5,7 @@ interface IParams {
   containsNum?: boolean;
   containsSpecialChar?: boolean;
   containsAlphabet?: boolean;
+  checkCommonPasswords?: boolean;
 }
 export function checkPassword({
   password,
@@ -13,6 +14,7 @@ export function checkPassword({
   containsNum = true,
   containsSpecialChar = true,
   containsAlphabet = true,
+  checkCommonPasswords = false,
 }: IParams): boolean {
   if (minLen != 0) {
     if (password.length < minLen) {
@@ -40,5 +42,17 @@ export function checkPassword({
     }
   }
 
+  if (checkCommonPasswords) {
+    if (passwordList != undefined && passwordList.includes(password)) {
+      return false;
+    }
+  }
+
   return true;
 }
+
+const response = await fetch(
+  "https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10k-most-common.txt",
+);
+
+const passwordList = await response.text();
