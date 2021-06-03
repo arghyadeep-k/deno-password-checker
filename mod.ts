@@ -5,7 +5,7 @@ interface IParams {
   containsNum?: boolean;
   containsSpecialChar?: boolean;
   containsAlphabet?: boolean;
-  checkCommonPasswords?: boolean;
+  checkWithCommonPasswords?: boolean;
 }
 export function checkPassword({
   password,
@@ -14,7 +14,7 @@ export function checkPassword({
   containsNum = true,
   containsSpecialChar = true,
   containsAlphabet = true,
-  checkCommonPasswords = false,
+  checkWithCommonPasswords = false,
 }: IParams): boolean {
   if (minLen != 0) {
     if (password.length < minLen) {
@@ -42,7 +42,7 @@ export function checkPassword({
     }
   }
 
-  if (checkCommonPasswords) {
+  if (checkWithCommonPasswords) {
     if (passwordList != undefined && passwordList.includes(password)) {
       return false;
     }
