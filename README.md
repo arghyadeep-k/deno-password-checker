@@ -36,6 +36,8 @@ import { checkPassword } from "https://deno.land/x/password_checker/mod.ts";
   characters. Defaults to true and enables the check.
 - `containsAlphabet: boolean` - To check if the password contains any alphabets.
   Defaults to true and enables the check.
+- `checkWithCommonPasswords: boolean` - To check if the password is one of the
+  10000 most common passwords. Need to use `--allow-net` to use this flag.
 
 ## Usage
 
