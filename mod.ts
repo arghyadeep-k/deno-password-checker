@@ -7,6 +7,15 @@ interface IParams {
   containsAlphabet?: boolean;
   checkWithCommonPasswords?: boolean;
 }
+
+const url =
+  "https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10k-most-common.txt";
+const response = await fetch(
+  url,
+);
+
+const passwordList = await response.text();
+
 export function checkPassword({
   password,
   minLen = 0,
@@ -50,9 +59,3 @@ export function checkPassword({
 
   return true;
 }
-
-const response = await fetch(
-  "https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10k-most-common.txt",
-);
-
-const passwordList = await response.text();

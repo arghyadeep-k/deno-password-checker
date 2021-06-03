@@ -38,6 +38,7 @@ import { checkPassword } from "https://deno.land/x/password_checker/mod.ts";
   Defaults to true and enables the check.
 - `checkWithCommonPasswords: boolean` - To check if the password is one of the
   10000 most common passwords. Need to use `--allow-net` to use this flag.
+  Defaults to false and disables the check for faster processing.
 
 ## Usage
 
@@ -79,11 +80,22 @@ isPasswordValid = checkPassword({
   password: passwordString,
   containsSpecialChar: false,
 });
+
+// To run the checck against 10k common passwords
+isPasswordValid = checkPassword({
+  password: passwordString,
+  containsSpecialChar: false,
+  checkWithCommonPasswords: true,
+});
 ```
+
+## Reference
+
+- https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/10k-most-common.txt
 
 ## License
 
-This package is published under the Unlicense. For more information, see the
+This package is published under the MIT license. For more information, see the
 accompanying LICENSE file.
 
 <br>
