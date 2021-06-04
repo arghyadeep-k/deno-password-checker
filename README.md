@@ -10,7 +10,7 @@
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=arghyadeep-k_deno-password-checker&metric=ncloc)](https://sonarcloud.io/dashboard?id=arghyadeep-k_deno-password-checker)
 [![Ko-Fi](https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg)](https://ko-fi.com/arghyadeep)
 
-Deno🦕 module to test if a password/string matches the preset criterias.
+Deno🦕 module to test if a password/string fulfills all the preset criterias.
 
 ## Installation
 
@@ -39,6 +39,10 @@ import { checkPassword } from "https://deno.land/x/password_checker/mod.ts";
 - `checkWithCommonPasswords: boolean` - To check if the password is one of the
   10000 most common passwords. Need to use `--allow-net` to use this flag.
   Defaults to false and disables the check for faster processing.
+
+## Output
+
+Returns true if password passes all checks.
 
 ## Usage
 
@@ -81,7 +85,7 @@ isPasswordValid = checkPassword({
   containsSpecialChar: false,
 });
 
-// To run the checck against 10k common passwords
+// To run a check against 10k common passwords
 isPasswordValid = checkPassword({
   password: passwordString,
   containsSpecialChar: false,
