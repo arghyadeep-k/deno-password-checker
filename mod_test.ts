@@ -105,13 +105,14 @@ Deno.test("Test for common password - Negative", () => {
 });
 
 /**
- * Test both `assertResult` and `checkPasswordWithResult` against the provided case
+ * Test both `checkPassword` and `checkPasswordWithResult` against the provided case with custom assert function
  * @param params
  * @param expectedResult
  */
 function assertResult(params: IParams, expectedResult: VerificationResult) {
+  // Invoking checkPassword()
   assertEquals(checkPassword(params), expectedResult.isValid);
 
-  const result = checkPasswordWithResult(params);
-  assertEquals(result, expectedResult);
+  // Invoking checkPasswordWithResult()
+  assertEquals(checkPasswordWithResult(params), expectedResult);
 }
