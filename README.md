@@ -18,6 +18,12 @@ Deno🦕 module to test if a password/string fulfills all the preset criterias.
 import { checkPassword } from "https://deno.land/x/password_checker/mod.ts";
 ```
 
+or
+
+```typescript
+import { checkPasswordWithResult } from "https://deno.land/x/password_checker/mod.ts";
+```
+
 ## Parameters
 
 ### Mandatory Parameters:
@@ -42,7 +48,13 @@ import { checkPassword } from "https://deno.land/x/password_checker/mod.ts";
 
 ## Output
 
-Returns true if password passes all checks.
+- If `checkPassword()` is invoked:
+  - Returns `true` if password passes all the checks, else `false`.
+- If `checkPasswordWithResult()` is invoked:
+  - `isValid: boolean` - `true` if the password is valid and passes all the
+    checks, else `false`.
+  - `reason: string` - The reason why the input password was marked as invalid.
+    Returns undefined in case `isValid` is `true`.`
 
 ## Usage
 
@@ -93,8 +105,9 @@ isPasswordValid = checkPassword({
 });
 ```
 
-If you want the reason of failure you can use `checkPasswordWithResult` which
-returns an object of type `VerificationResult`.
+If you want the reason of failure as well, you can use
+`checkPasswordWithResult()` which returns an object of type
+`VerificationResult`.
 
 ```typescript
 interface VerificationResult {
