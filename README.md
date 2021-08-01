@@ -93,6 +93,15 @@ isPasswordValid = checkPassword({
 });
 ```
 
+If you want the reason of failure you can use `checkPasswordWithResult` which returns an object of type `VerificationResult`.
+
+```typescript
+interface VerificationResult {
+  isValid: boolean,
+  reason?: string
+}
+```
+
 ## Reference
 
 - https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/10k-most-common.txt
