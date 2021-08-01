@@ -30,54 +30,45 @@ export function checkPasswordWithResult({
   containsAlphabet = true,
   checkWithCommonPasswords = false,
 }: IParams): VerificationResult {
-  if (minLen != 0) {
-    if (password.length < minLen) {
-      return {
-        isValid: false,
-        reason: `The password should contain at least ${minLen} characters`,
-      };
-    }
+  if (minLen != 0 && password.length < minLen) {
+    return {
+      isValid: false,
+      reason: `The password should contain at least ${minLen} characters`,
+    };
   }
-  if (maxLen != 0) {
-    if (password.length > maxLen) {
-      return {
-        isValid: false,
-        reason: `The password should contain at most ${maxLen} characters`,
-      };
-    }
+  if (maxLen != 0 && password.length > maxLen) {
+    return {
+      isValid: false,
+      reason: `The password should contain at most ${maxLen} characters`,
+    };
   }
-  if (containsNum) {
-    if (password.search(/\d/) == -1) {
-      return {
-        isValid: false,
-        reason: "The password should contain at least one digit",
-      };
-    }
+  if (containsNum && password.search(/\d/) == -1) {
+    return {
+      isValid: false,
+      reason: "The password should contain at least one digit",
+    };
   }
-  if (containsSpecialChar) {
-    if (password.search(/[^\w\s]/) == -1) {
-      return {
-        isValid: false,
-        reason: "The password should contain at least one special character",
-      };
-    }
+  if (containsSpecialChar && password.search(/[^\w\s]/) == -1) {
+    return {
+      isValid: false,
+      reason: "The password should contain at least one special character",
+    };
   }
-  if (containsAlphabet) {
-    if (password.search(/[A-Za-z]/) == -1) {
-      return {
-        isValid: false,
-        reason: "The password should contain at least one letter",
-      };
-    }
+  if (containsAlphabet && password.search(/[A-Za-z]/) == -1) {
+    return {
+      isValid: false,
+      reason: "The password should contain at least one letter",
+    };
   }
 
-  if (checkWithCommonPasswords) {
-    if (passwordList != undefined && passwordList.includes(password)) {
-      return {
-        isValid: false,
-        reason: "The password should not be too common",
-      };
-    }
+  if (
+    checkWithCommonPasswords && passwordList != undefined &&
+    passwordList.includes(password)
+  ) {
+    return {
+      isValid: false,
+      reason: "The password should not be too common",
+    };
   }
 
   return { isValid: true };
