@@ -9,8 +9,8 @@ export interface IParams {
 }
 
 export interface VerificationResult {
-  isValid: boolean,
-  reason?: string
+  isValid: boolean;
+  reason?: string;
 }
 
 const url =
@@ -34,7 +34,7 @@ export function checkPasswordWithResult({
     if (password.length < minLen) {
       return {
         isValid: false,
-        reason: `The password should contain at least ${minLen} characters`
+        reason: `The password should contain at least ${minLen} characters`,
       };
     }
   }
@@ -42,7 +42,7 @@ export function checkPasswordWithResult({
     if (password.length > maxLen) {
       return {
         isValid: false,
-        reason: `The password should contain at most ${maxLen} characters`
+        reason: `The password should contain at most ${maxLen} characters`,
       };
     }
   }
@@ -50,7 +50,7 @@ export function checkPasswordWithResult({
     if (password.search(/\d/) == -1) {
       return {
         isValid: false,
-        reason: "The password should contain at least one digit"
+        reason: "The password should contain at least one digit",
       };
     }
   }
@@ -58,7 +58,7 @@ export function checkPasswordWithResult({
     if (password.search(/[^\w\s]/) == -1) {
       return {
         isValid: false,
-        reason: "The password should contain at least one special character"
+        reason: "The password should contain at least one special character",
       };
     }
   }
@@ -66,7 +66,7 @@ export function checkPasswordWithResult({
     if (password.search(/[A-Za-z]/) == -1) {
       return {
         isValid: false,
-        reason: "The password should contain at least one letter"
+        reason: "The password should contain at least one letter",
       };
     }
   }
@@ -75,7 +75,7 @@ export function checkPasswordWithResult({
     if (passwordList != undefined && passwordList.includes(password)) {
       return {
         isValid: false,
-        reason: "The password should not be too common"
+        reason: "The password should not be too common",
       };
     }
   }
@@ -84,5 +84,5 @@ export function checkPasswordWithResult({
 }
 
 export function checkPassword(params: IParams): boolean {
-  return checkPasswordWithResult(params).isValid
+  return checkPasswordWithResult(params).isValid;
 }

@@ -93,12 +93,13 @@ isPasswordValid = checkPassword({
 });
 ```
 
-If you want the reason of failure you can use `checkPasswordWithResult` which returns an object of type `VerificationResult`.
+If you want the reason of failure you can use `checkPasswordWithResult` which
+returns an object of type `VerificationResult`.
 
 ```typescript
 interface VerificationResult {
-  isValid: boolean,
-  reason?: string
+  isValid: boolean;
+  reason?: string;
 }
 ```
 

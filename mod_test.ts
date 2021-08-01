@@ -1,23 +1,28 @@
 import { assertEquals } from "./test_deps.ts";
-import { checkPassword, checkPasswordWithResult, IParams, VerificationResult } from "./mod.ts";
+import {
+  checkPassword,
+  checkPasswordWithResult,
+  IParams,
+  VerificationResult,
+} from "./mod.ts";
 
 Deno.test("Test with defaults", () => {
   assertResult({ password: "random123." }, {
-    isValid: true
+    isValid: true,
   });
 });
 
 Deno.test("Test for minimum length", () => {
   assertResult({ password: "random123", minLen: 10 }, {
     isValid: false,
-    reason: "The password should contain at least 10 characters"
+    reason: "The password should contain at least 10 characters",
   });
 });
 
 Deno.test("Test for maximum length", () => {
   assertResult({ password: "radnom123", minLen: 2, maxLen: 5 }, {
     isValid: false,
-    reason: "The password should contain at most 5 characters"
+    reason: "The password should contain at most 5 characters",
   });
 });
 
@@ -26,10 +31,10 @@ Deno.test("Test for numbers", () => {
     password: "random",
     minLen: 2,
     maxLen: 10,
-    containsNum: true
+    containsNum: true,
   }, {
     isValid: false,
-    reason: "The password should contain at least one digit"
+    reason: "The password should contain at least one digit",
   });
 });
 
@@ -39,10 +44,10 @@ Deno.test("Test for special characters", () => {
     minLen: 2,
     maxLen: 10,
     containsNum: true,
-    containsSpecialChar: true
+    containsSpecialChar: true,
   }, {
     isValid: false,
-    reason: "The password should contain at least one special character"
+    reason: "The password should contain at least one special character",
   });
 });
 
@@ -56,7 +61,7 @@ Deno.test("Test for alphabets", () => {
     containsAlphabet: true,
   }, {
     isValid: false,
-    reason: "The password should contain at least one letter"
+    reason: "The password should contain at least one letter",
   });
 });
 
@@ -80,7 +85,7 @@ Deno.test("Test for common password - Positive", () => {
     maxLen: 12,
     checkWithCommonPasswords: true,
   }, {
-    isValid: true
+    isValid: true,
   });
 });
 
@@ -95,7 +100,7 @@ Deno.test("Test for common password - Negative", () => {
     checkWithCommonPasswords: true,
   }, {
     isValid: false,
-    reason: "The password should not be too common"
+    reason: "The password should not be too common",
   });
 });
 
@@ -105,8 +110,8 @@ Deno.test("Test for common password - Negative", () => {
  * @param expectedResult
  */
 function assertResult(params: IParams, expectedResult: VerificationResult) {
-  assertEquals(checkPassword(params), expectedResult.isValid)
+  assertEquals(checkPassword(params), expectedResult.isValid);
 
   const result = checkPasswordWithResult(params);
-  assertEquals(result, expectedResult)
+  assertEquals(result, expectedResult);
 }
